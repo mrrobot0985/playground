@@ -27,11 +27,10 @@ VENV_DIR="$HOME/.venv/setup"
 print_bold "Creating and activating virtual environment at $VENV_DIR..."
 mkdir -p "$VENV_DIR"
 python3 -m venv "$VENV_DIR"
-source "$VENV_DIR/bin/activate"
 
 # Step 4: Install Ansible using pip
 print_bold "Installing Ansible..."
-pip install ansible
+$VENV_DIR/bin/pip install ansible
 
 # Step 5: Retrieve requirements.yml and setup.yml from a URL
 REQUIREMENTS_URL="https://raw.githubusercontent.com/mrrobot0985/playground/main/requirements.yml"
@@ -47,13 +46,12 @@ curl -o "$SETUP_FILE" "$SETUP_URL"
 
 # Step 6: Install Ansible roles from requirements.yml
 print_bold "Installing Ansible roles from requirements.yml..."
-ansible-galaxy role install -r "$REQUIREMENTS_FILE"
+$VENV_DIR/bin/ansible-galaxy role install -r "$REQUIREMENTS_FILE"
 
 # Step 7: Run the Ansible playbook setup.yml
 print_bold "Running Ansible playbook setup.yml..."
-ansible-playbook "$SETUP_FILE"
+$VENV_DIR/bin/ansible-playbook "$SETUP_FILE"
 
 print_bold "Provisioning complete. Deactivating virtual environment."
-deactivate
 
 print_bold "All done! Your system is now provisioned."

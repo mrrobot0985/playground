@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true
+  # roles:
+  #   - geerlingguy.security
+  tasks:
+  - name: Only a test
+    debug:
+      msg: "This is merely a test {{ lookup('env', 'USER') }}"

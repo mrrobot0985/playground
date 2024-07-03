@@ -1,0 +1,5 @@
+---
+roles:
+  - name: geerlingguy.security
+    src: geerlingguy.security
+    version: 2.1.0

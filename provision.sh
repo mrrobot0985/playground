@@ -34,8 +34,8 @@ print_bold "Installing Ansible..."
 pip install ansible
 
 # Step 5: Retrieve requirements.yml and setup.yml from a URL
-REQUIREMENTS_URL="http://example.com/path/to/requirements.yml"
-SETUP_URL="http://example.com/path/to/setup.yml"
+REQUIREMENTS_URL="https://raw.githubusercontent.com/mrrobot0985/playground/main/requirements.yml"
+SETUP_URL="https://raw.githubusercontent.com/mrrobot0985/playground/main/setup.yml"
 REQUIREMENTS_FILE="$HOME/requirements.yml"
 SETUP_FILE="$HOME/setup.yml"
 

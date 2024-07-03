@@ -8,7 +8,7 @@
 set -e
 
 # Function to print messages in bold
-function print_bold {
+print_bold() {
   echo -e "\033[1m$1\033[0m"
 }
 
